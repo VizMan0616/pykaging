@@ -3,14 +3,18 @@ from os import getcwd, mkdir, getenv
 from os.path import (
                 abspath, 
                 relpath, 
-                join
+                join,
             )
 from typing import Optional
 
 
 class CreatePackage:
-    """
-    
+    """Package class designed for handling basic and common
+    attributes associated with diretories and naming.
+    -------------------------------------------------------
+    Attrs:
+        package_name[str] - The name used to create the package.
+        dir [str] - Optional argument, if provided i will create
     """
     
     def __init__(self, package_name:str, dir:Optional[str]) -> None:
@@ -18,12 +22,15 @@ class CreatePackage:
         self.created_date = date.today()
         self.abs_dir = getcwd() or abspath(dir)
         self.abs_init_dir = ""
-        self._rel_dir = relpath(getcwd()) or dir
-        self._rel_init_dir = ""
 
     def create_package(self):
         new_package_route = join(self._rel_dir, self.package_name)
-        mkdir(new_package_route)
+        
+        try:
+            mkdir(new_package_route)
+        except FileNotFoundError as dir_error:
+            print(f"There's was an error during folder creation:\n\t{dir_error}") 
+        
         self.abs_init_dir = join(abspath(new_package_route), "__init__.py")
         self._rel_init_dir = join(new_package_route, "__init__.py")
 
