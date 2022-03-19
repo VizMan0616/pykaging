@@ -24,7 +24,7 @@ class CreatePackage:
         self.abs_init_dir = ""
 
     def create_package(self):
-        new_package_route = join(self._rel_dir, self.package_name)
+        new_package_route = join(self.abs_dir, self.package_name)
         
         try:
             mkdir(new_package_route)
@@ -32,7 +32,6 @@ class CreatePackage:
             print(f"There's was an error during folder creation:\n\t{dir_error}") 
         
         self.abs_init_dir = join(abspath(new_package_route), "__init__.py")
-        self._rel_init_dir = join(new_package_route, "__init__.py")
 
         self._create_init_file(True)
 
@@ -44,7 +43,7 @@ class CreatePackage:
         template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")}\n         
         # by {getenv("USER").upper()}.\n
         # \n
-        # PYKAGE and all it's feature is a software under the MIT License.
+        # PYKAGE is created by VizMan0616 and all it's feature is a software running under the MIT License.
         """
 
         if is_package_created:
