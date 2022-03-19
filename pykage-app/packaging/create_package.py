@@ -1,4 +1,5 @@
-from os import getcwd, mkdir
+from datetime import date
+from os import getcwd, mkdir, getenv
 from os.path import (
                 abspath, 
                 relpath, 
@@ -14,6 +15,7 @@ class CreatePackage:
     
     def __init__(self, package_name:str, dir:Optional[str]) -> None:
         self.package_name = package_name
+        self.created_date = date.today()
         self.abs_dir = getcwd() or abspath(dir)
         self.abs_init_dir = ""
         self._rel_dir = relpath(getcwd()) or dir
@@ -24,7 +26,7 @@ class CreatePackage:
         mkdir(new_package_route)
         self.abs_init_dir = join(abspath(new_package_route), "__init__.py")
         self._rel_init_dir = join(new_package_route, "__init__.py")
-        
+
         self._create_init_file(True)
 
     def _create_init_file(self, is_package_created:bool) -> None:
@@ -32,8 +34,10 @@ class CreatePackage:
         so python can recognize it as it.
         """
         
-        template_str = """
-        
+        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")}\n         
+        # by {getenv("USER").upper()}.\n
+        # \n
+        # PYKAGE and all it's feature is a software under the MIT License.
         """
 
         if is_package_created:
