@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pykage",
-    version="0.6",
+    version="0.6.2",
     author="José Vizcaya",
     author_email="josevizcaya0616@gmail.com",
     description="""A CLI app provided for creating packages in

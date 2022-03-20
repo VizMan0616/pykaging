@@ -26,3 +26,4 @@ def main(name, dir):
     """
     new_package = CreatePackage(name, dir)
     new_package.create_package()
+    click.pause(f"Package '{name}' created sucessfully... Press any key to exit.")
