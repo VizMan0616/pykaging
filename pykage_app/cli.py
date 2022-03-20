@@ -21,5 +21,8 @@ color.init(autoreset=True)
                 help="The directory in wich the package should be created.",
                 type=click.Path(exists=True))
 def main(name, dir):
+    """The NAME argument serves as the base name to create
+    the package in the default directory or in the privded one.
+    """
     new_package = CreatePackage(name, dir)
     new_package.create_package()

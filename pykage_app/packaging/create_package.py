@@ -11,7 +11,7 @@ class CreatePackage:
     -------------------------------------------------------
     Attrs:\n
     package_name[str] - The name used to create the package.\n
-    dir [str] - Optional argument, if provided i will create
+    dir [str] - Directory where the package should be created.
     """
     
     def __init__(self, package_name:str, dir:str) -> None:
