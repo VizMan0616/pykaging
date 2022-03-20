@@ -9,9 +9,9 @@ class CreatePackage:
     """Package class designed for handling basic and common
     attributes associated with diretories and naming.
     -------------------------------------------------------
-    Attrs:
-        package_name[str] - The name used to create the package.
-        dir [str] - Optional argument, if provided i will create
+    Attrs:\n
+    package_name[str] - The name used to create the package.\n
+    dir [str] - Optional argument, if provided i will create
     """
     
     def __init__(self, package_name:str, dir:Optional[str]) -> None:
