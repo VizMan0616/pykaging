@@ -47,7 +47,7 @@ class CreatePackage:
         elif sys.platform == "win32":
             os_name = getenv("USERNAME")
 
-        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")} by {os_name}.
+        template_str = f"""# '{self.package_name}' package created at {self.created_date.strftime("%m/%d/%Y")} by {os_name}.
 # 
 # PYKAGE is created by José Vizcaya. This software is running
 # under the MIT License.
