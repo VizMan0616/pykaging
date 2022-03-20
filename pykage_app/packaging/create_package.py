@@ -44,8 +44,8 @@ class CreatePackage:
         
         template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")} by {getenv("USER").upper()}.
 # 
-# PYKAGE is created by José Vizcaya. All features is a software 
-# running under the MIT License.
+# PYKAGE is created by José Vizcaya. This software is running
+# under the MIT License.
 # 
 # To see more about please refer to [GitHub link]
 """
