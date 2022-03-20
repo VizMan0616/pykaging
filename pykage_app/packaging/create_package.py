@@ -1,6 +1,7 @@
 from datetime import date
 from os import getenv
 from os.path import abspath
+import sys
 from pathlib import Path
 from typing import Optional
 
@@ -41,8 +42,12 @@ class CreatePackage:
         """Creates an init file if the package is creatd
         so python can recognize it as it.
         """
-        
-        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")} by {getenv("USER").upper()}.
+        if sys.platform == "linux":
+            os_name = getenv("USER")
+        elif sys.platform == "win32":
+            os_name = getenv("USERNAME")
+
+        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")} by {os_name}.
 # 
 # PYKAGE is created by José Vizcaya. This software is running
 # under the MIT License.
