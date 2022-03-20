@@ -1,5 +1,5 @@
 from datetime import date
-from os import getcwd, getenv
+from os import getenv
 from os.path import abspath
 from pathlib import Path
 from typing import Optional
@@ -14,10 +14,10 @@ class CreatePackage:
     dir [str] - Optional argument, if provided i will create
     """
     
-    def __init__(self, package_name:str, dir:Optional[str]) -> None:
+    def __init__(self, package_name:str, dir:str) -> None:
         self.package_name = package_name
         self.created_date = date.today()
-        self.abs_dir = Path(getcwd() or abspath(dir))
+        self.abs_dir = Path(abspath(dir))
         self.abs_init_dir = None
 
     def create_package(self):
@@ -42,12 +42,13 @@ class CreatePackage:
         so python can recognize it as it.
         """
         
-        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")}\n         
-        # by {getenv("USER").upper()}.\n
-        # \n
-        # PYKAGE is created by Jos'e Vizcaya. All features is a software running under the MIT License.\n
-        # To see more about please refer to [GitHub link]
-        """
+        template_str = f"""# {self.package_name.upper()} package created at {self.created_date.strftime("%m/%d/%Y")} by {getenv("USER").upper()}.
+# 
+# PYKAGE is created by José Vizcaya. All features is a software 
+# running under the MIT License.
+# 
+# To see more about please refer to [GitHub link]
+"""
 
         if is_package_created:
             with self.abs_init_dir.open(mode="w") as init_file:
