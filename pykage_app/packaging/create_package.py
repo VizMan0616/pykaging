@@ -52,7 +52,7 @@ class CreatePackage:
 # PYKAGE is created by José Vizcaya. This software is running
 # under the MIT License.
 # 
-# To see more about please refer to [GitHub link]
+# To see more about please refer to https://github.com/VizMan0616/pykage
 """
 
         if is_package_created:
