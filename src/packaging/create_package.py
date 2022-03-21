@@ -49,10 +49,10 @@ class CreatePackage:
 
         template_str = f"""# '{self.package_name}' package created at {self.created_date.strftime("%m/%d/%Y")} by {os_name}.
 # 
-# PYKAGE is created by José Vizcaya. This software is running
+# Pykaging is created by José Vizcaya. This software is running
 # under the MIT License.
 # 
-# To see more about please refer to https://github.com/VizMan0616/pykage
+# To see more about please refer to https://github.com/VizMan0616/pykaging
 """
 
         if is_package_created:
