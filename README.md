@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 <div align="center">
-    <h1 style="font-weight:bold;">Pykage</h1>
+    <h1 style="font-weight:bold;">Pykaging</h1>
     <p align="center">Command-Line Tool to simplify the creation of python's packages in non-IDE environments.</p>
 </div>
 
@@ -45,7 +45,7 @@ So since I kinda like the CLIs I decided to made this tool.
 ## Installation
 
 ```sh
-pip install pykage
+pip install pykaging
 ```
 
 After doing that, the next step is use the CLI. Check [the next section](#usage) for more information.
@@ -54,26 +54,26 @@ After doing that, the next step is use the CLI. Check [the next section](#usage)
 
 ## Usage
 
-For a basic usage of the interface you have to prvide a ***name*** for your package and then pykage will create it in your current directory, so make sure you are in the right directory. 
+For a basic usage of the interface you have to prvide a ***name*** for your package and then pykaging will create it in your current directory, so make sure you are in the right directory. 
 
 Example:
 
 ```sh
-pykage [name_of_your_Package]
+pykaging [name_of_your_Package]
 ```
 
-Otherwise if you provide the _--dir_ or _-d_, as the option, followed by the name of the directory where pykage should create the package.
+Otherwise if you provide the _--dir_ or _-d_, as the option, followed by the name of the directory where pykaging should create the package.
 
 Example:
 
 ```sh
-pykage --dir [path_of_your_directory] [name_of_your_Package]
+pykaging --dir [path_of_your_directory] [name_of_your_Package]
 ```
 
 or
 
 ```sh
-pykage -d [path_of_your_directory] [name_of_your_Package]
+pykaging -d [path_of_your_directory] [name_of_your_Package]
 ```
 
 <p align="right">[<a href="#top">back to top</a>]</p>
