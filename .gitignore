@@ -2,3 +2,5 @@
 .python-version
 **.egg-info/
 dist/
+venv/
+virtualenv/
