@@ -9,6 +9,7 @@ setup(
     environments that does not support that functionality,
     i.e the vast majority of text editors.
     """,
+    url="https://github.com/VizMan0616/pykage",
     packages=[
         "pykage_app",
         "pykage_app.packaging"
@@ -17,6 +18,7 @@ setup(
         "click",
         "colorama"
     ],
+    python_requires=">=3.7",
     entry_points={
         "console_scripts": [
             "pykage = pykage_app:main"
